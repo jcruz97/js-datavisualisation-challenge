@@ -1,14 +1,19 @@
 function tableDataRetriever(selectTable){
+
     let dataTable = document.getElementById(selectTable);
 
-    for (let i=1; i < dataTable.rows.length; i++){
+    let rowLength = dataTable.rows.length;
+
+    for (let i=0; i < rowLength; i++){
 
         let tableCells = dataTable.rows.item(i).cells;
 
-        for (let j=0; j < tableCells.length; j++){
+        let cellLength= tableCells.length;
+
+        for (let j=0; j < cellLength; j++){
 
             let countryData = tableCells.item(j).innerHTML;
-            console.log(countryData);
+            //console.log(countryData);
         }
     }
 }
