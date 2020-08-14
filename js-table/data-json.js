@@ -4,7 +4,7 @@ let json = []; // First row needs to be headers
 let headers =[];
 
 for (let i = 0; i < table.rows[0].cells.length; i++) {
-  headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase().replace(/ /g,"");
+  headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase();
 }
 
 for (let i = 1; i < table.rows.length; i++) {
@@ -13,20 +13,12 @@ for (let i = 1; i < table.rows.length; i++) {
     let rowData = {};
 
     for (let j = 1; j < tableRow.cells.length; j++) {
-      rowData[headers[j]] = tableRow.cells[j].innerHTML;
+      rowData[headers[j]] = tableRow.cells[j].innerHTML.replace(/\s+/g," ").replace(/<br>/g,"");
     }
 
     json.push(rowData);
-    let ukCorrectString = json[7].country.replace(/\s+/g, ' ').replace(/<br>/g, '');
-    json.push(ukCorrectString)
-    
-
 }
 
-
-//let britainStringIncorrect = labels[7];
-//let britainStringCorrect = britainStringIncorrect.replace(/\s+/g, ' ').replace(/<br>/g, '');
-//console.log(britainStringCorrect);
 
 let labels = json.map(function (element) {
   return element.country;
