@@ -10,11 +10,53 @@ function canvasPlacement(table, chart){
   
 }
 
-canvasPlacement("#table1", "chartOne")
-canvasPlacement("#table2", "chartTwo");
+canvasPlacement("#table1", "chartOne"); // Canvas for the first line chart
+canvasPlacement("#table2", "chartTwo"); // Canvas for the second bar chart
 
 
-function BuildChart(labels, valuesOne, valuesTwo, numberOfChart){
+function chartOne(labels, values, numberOfChart){
+    
+    var ctx = document.getElementById(numberOfChart).getContext('2d');
+
+    var newChart = new Chart(ctx, {
+
+        type: "line",
+        data: {
+
+        labels: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012], // Our labels
+        datasets: [
+            /*{
+            label : labels,
+            data : values,
+            backgroundColor: "#003399",
+            }*/
+         ]
+
+        },
+
+        options: {
+            responsive: false,
+            title:{
+                display: true,
+                text: "Offences recorded in each country per year"
+            } 
+        }
+
+    });
+    return newChart;
+    
+}
+
+/*
+* 
+*
+*
+*
+*
+*/
+
+
+function chartTwo(labels, valuesOne, valuesTwo, numberOfChart){
     
     var ctx = document.getElementById(numberOfChart).getContext('2d');
 
@@ -52,7 +94,3 @@ function BuildChart(labels, valuesOne, valuesTwo, numberOfChart){
     return newChart;
     
 }
-
-
-
-
