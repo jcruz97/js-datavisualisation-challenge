@@ -7,8 +7,7 @@ for (let i = 0; i < table.rows[0].cells.length; i++) {
   headers[i] = table.rows[0].cells[i].innerHTML.toLowerCase().replace(/ /g,"");
 }
 
-// Go through cells 
-  for (let i = 1; i < table.rows.length; i++) {
+for (let i = 1; i < table.rows.length; i++) {
 
     let tableRow = table.rows[i];
     let rowData = {};
@@ -18,25 +17,37 @@ for (let i = 0; i < table.rows[0].cells.length; i++) {
     }
 
     json.push(rowData);
+    let ukCorrectString = json[7].country.replace(/\s+/g, ' ').replace(/<br>/g, '');
+    json.push(ukCorrectString)
     
 
-  }
+}
 
-  console.log(json);    
 
-// Map JSON values back to label array
+//let britainStringIncorrect = labels[7];
+//let britainStringCorrect = britainStringIncorrect.replace(/\s+/g, ' ').replace(/<br>/g, '');
+//console.log(britainStringCorrect);
+
 let labels = json.map(function (element) {
-    return element.country;
-  });
+  return element.country;
+});
 
-    console.log(labels);
-  
-// Map JSON values back to values array
-  let values = json.map(function (element) {
-    return element["2007–09"];
-  });
+let valuesFirstDate = json.map(function (element) {
+  return element["2007–09"];
+});
 
-    console.log(values); 
+let valuesSecondDate = json.map(function (element){
+  return element["2010–12"];
+});
 
-let secondChart = BuildChart(labels, values);
 
+
+let secondChart = BuildChart(labels, valuesFirstDate, valuesSecondDate, "chartTwo");
+
+
+/*Control block for every data container (array...)*/
+console.log(json);  
+console.log(valuesSecondDate);
+console.log(valuesFirstDate); 
+console.log(labels);
+console.log(ukCorrectString);

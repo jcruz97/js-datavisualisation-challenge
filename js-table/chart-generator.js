@@ -10,25 +10,42 @@ function canvasPlacement(table, chart){
   
 }
 
-canvasPlacement("#table2", "chartOne");
+canvasPlacement("#table1", "chartOne")
+canvasPlacement("#table2", "chartTwo");
 
 
-function BuildChart(labels, values){
+function BuildChart(labels, valuesOne, valuesTwo, numberOfChart){
     
-    var ctx = document.getElementById("chartOne").getContext('2d');
+    var ctx = document.getElementById(numberOfChart).getContext('2d');
 
     var newChart = new Chart(ctx, {
+
         type: "bar",
         data: {
+
         labels: labels, // Our labels
-        datasets: [{
-            label: labels, // Name the series
-            data: values, // Our values
-            }]
+        datasets: [
+            {
+            label: "2007–09", // Name the series
+            data: valuesOne, // Our values
+            backgroundColor: "#FFCC00", 
+            },
+
+            {
+            label : "2010–12",
+            data : valuesTwo,
+            backgroundColor: "#003399",
+            }
+         ]
+
         },
 
         options: {
-            responsive: false, 
+            responsive: false,
+            title:{
+                display: true,
+                text: "Prison population, in average per 100,000 inhabitants in each E.U country"
+            } 
         }
 
     });
