@@ -5,15 +5,19 @@ ajaxRequest.addEventListener("load", function() {
 
         let response = JSON.parse(this.responseText);
         
-        for (let elements of response){
-            let crimeData = [];
-            crimeData.push(elements);
-            console.log(crimeData);
+        let labels = response.map(function (e){
+            return e[0];
+        });
 
-        }
-        
+        let values = response.map(function (e){
+            return e[1];
+        });
+
+
+        ajaxChart(labels, values, "chartAjax");
     }
 });
 
 ajaxRequest.open("GET","https://canvasjs.com/services/data/datapoints.php");
 ajaxRequest.send();
+

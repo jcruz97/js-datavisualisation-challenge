@@ -15,9 +15,9 @@ canvasPlacement("#table1", "chartOne"); // Canvas for the first line chart
 canvasPlacement("#table2", "chartTwo"); // Canvas for the second bar chart
 
 
-function chartOne(labels, values, numberOfChart){
+function chartOne(data, numberOfChart){
     
-    var ctx = document.getElementById(numberOfChart).getContext('2d');
+    var ctx = document.getElementById(numberOfChart).getContext("2d");
 
     var newChart = new Chart(ctx, {
 
@@ -25,14 +25,7 @@ function chartOne(labels, values, numberOfChart){
         data: {
 
         labels: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012], // Our labels
-        datasets: [
-            /*{
-            label : labels,
-            data : values,
-            backgroundColor: "#003399",
-            }*/
-         ]
-
+        datasets: [data]
         },
 
         options: {
@@ -59,7 +52,7 @@ function chartOne(labels, values, numberOfChart){
 
 function chartTwo(labels, valuesOne, valuesTwo, numberOfChart){
     
-    var ctx = document.getElementById(numberOfChart).getContext('2d');
+    var ctx = document.getElementById(numberOfChart).getContext("2d");
 
     var newChart = new Chart(ctx, {
 
@@ -88,6 +81,39 @@ function chartTwo(labels, valuesOne, valuesTwo, numberOfChart){
             title:{
                 display: true,
                 text: "Prison population, in average per 100,000 inhabitants in each E.U country"
+            } 
+        }
+
+    });
+    return newChart;
+    
+}
+
+
+function ajaxChart(labels, values, numberOfChart){
+    var ctx = document.getElementById(numberOfChart).getContext("2d");
+
+    var newChart = new Chart(ctx, {
+
+        type: "line",
+        data: {
+
+        labels: labels, // Our labels
+        datasets: [
+            {
+            label: "Raw Data", // Name the series
+            data: values, // Our values
+            backgroundColor: "#FFCC00", 
+            },
+         ]
+
+        },
+
+        options: {
+            responsive: false,
+            title:{
+                display: true,
+                text: "Some JSON data"
             } 
         }
 
