@@ -27,10 +27,10 @@ function createChart(){
             backgroundColor: 'yellow',
             borderColor:'blue',
             borderWidth: 2,
-            dataOffence:[]
+            data:[]
         }
         for (let j = 0; j < table1.rows[i].cells.length; j++) {
-            country.dataOffence.push(table1.rows[i].cells[j].textContent);   
+            country.data.push(table1.rows[i].cells[j].textContent);   
         }
 
         datasetsValue.push(country)
