@@ -29,7 +29,7 @@ function createChart(){
             borderWidth: 2,
             data:[]
         }
-        for (let j = 0; j < table1.rows[i].cells.length; j++) {
+        for (let j = 1; j < table1.rows[i].cells.length; j++) {
             country.data.push(table1.rows[i].cells[j].textContent);   
         }
 
