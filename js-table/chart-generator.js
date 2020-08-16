@@ -10,6 +10,7 @@ function canvasPlacement(table, chart){
   
 }
 
+canvasPlacement("#bodyContent", "chartAjax");
 canvasPlacement("#table1", "chartOne"); // Canvas for the first line chart
 canvasPlacement("#table2", "chartTwo"); // Canvas for the second bar chart
 
