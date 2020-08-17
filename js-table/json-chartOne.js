@@ -21,38 +21,33 @@ for (let i = 2; i < tableOneId.rows.length; i++) {
 }
 
 
-
-function dataSetting(){
-
-  let valuesArray = [];
-
-  let labelsOne = jsonOne.map(function (element) {
-      
+let labelsOne = jsonOne.map(function (element) {
+    element["country"] = element[""];
     return element.country;
-  });
-  //console.log(labelsOne);
+});
 
-  for (let element in jsonOne){
+  /*let values = jsonOne[0];
+  let valuesOne = Object.values(values);
+  valuesOne.splice(11, 2);*/
+  
+for (let i=0; i<jsonOne.length; i++){
+  return jsonOne[i];
+}
+  
+
+  
+  
+  /*for (let element in jsonOne){
     let values = jsonOne[element];
     let valuesOne = Object.values(values);
-    valuesArray.push(valuesOne);
 
     console.log(valuesOne);
+  }*/
 
-    let newData = {
-      label : labelsOne,
-      data : valuesArray,
-      backgroundColor : "randomColor",
-      fill : false
-      
-    }
-  }
+//console.log(jsonOne[0]);
 
-  chartOne(newData, "chartOne");
-}
+let firstChart = chartOne("chartOne");
 
-//console.log(jsonOne);
-dataSetting();
 
 
 

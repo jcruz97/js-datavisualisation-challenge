@@ -38,5 +38,4 @@ let secondChart = chartTwo(labels, valuesFirstDate, valuesSecondDate, "chartTwo"
 *  console.log(valuesSecondDate);
 *  console.log(valuesFirstDate); 
 *  console.log(labels);
-
 */

@@ -15,7 +15,7 @@ canvasPlacement("#table1", "chartOne"); // Canvas for the first line chart
 canvasPlacement("#table2", "chartTwo"); // Canvas for the second bar chart
 
 
-function chartOne(data, numberOfChart){
+function chartOne(numberOfChart){
     
     var ctx = document.getElementById(numberOfChart).getContext("2d");
 
@@ -25,7 +25,14 @@ function chartOne(data, numberOfChart){
         data: {
 
         labels: [2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012], // Our labels
-        datasets: [data]
+        datasets: [
+            {
+            label : "Belgium",
+            data : [1,2,3,3],
+            backgroundColor: 'yellow',
+            borderColor:'blue'
+            }
+         ]
         },
 
         options: {
