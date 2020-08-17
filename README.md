@@ -31,7 +31,7 @@ Problems encountered
 
 3) We have problems to a find a solution to make the Ajax request update every second.
 
-4) First chart doesn't render any sort of data...
+4) First chart doesn't render any sort of data... *EDIT : Problem solved by Stephane*
 
 
 Don't be afraid to ask if you have an hesitation on how I work on this website or for any problem encountered.
