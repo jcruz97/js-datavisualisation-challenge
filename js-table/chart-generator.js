@@ -95,36 +95,3 @@ function chartTwo(labels, valuesOne, valuesTwo, numberOfChart){
     return newChart;
     
 }
-
-
-function ajaxChart(labels, values, numberOfChart){
-    var ctx = document.getElementById(numberOfChart).getContext("2d");
-
-    var newChart = new Chart(ctx, {
-
-        type: "line",
-        data: {
-
-        labels: labels, // Our labels
-        datasets: [
-            {
-            label: "Raw Data", // Name the series
-            data: values, // Our values
-            backgroundColor: "#FFCC00", 
-            },
-         ]
-
-        },
-
-        options: {
-            responsive: false,
-            title:{
-                display: true,
-                text: "Some JSON data"
-            } 
-        }
-
-    });
-    return newChart;
-    
-}
