@@ -12,11 +12,11 @@ function canvasPlacement(table, chart){
 }
 
 canvasPlacement("#bodyContent", "chartAjax");
-canvasPlacement("#table1", "chartOne"); // Canvas for the first line chart
+//canvasPlacement("#table1", "chartOne"); // Canvas for the first line chart
 canvasPlacement("#table2", "chartTwo"); // Canvas for the second bar chart
 
 
-function chartOne(numberOfChart){
+/*function chartOne(numberOfChart){
     
     var ctx = document.getElementById(numberOfChart).getContext("2d");
 
@@ -48,8 +48,9 @@ function chartOne(numberOfChart){
     return newChart;
     
 }
+*/
 
-/*We placed our two table charts under these functions for more readability*/
+/*We placed our table charts under these functions for more readability*/
 
 function chartTwo(labels, valuesOne, valuesTwo, numberOfChart){
     
