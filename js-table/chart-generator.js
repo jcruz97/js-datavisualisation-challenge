@@ -1,3 +1,4 @@
+/*This function does what his name means, it selects a specific place in the DOM then create the canvas for our chart*/
 function canvasPlacement(table, chart){
 
     let tableNest = document.querySelector(table);
@@ -48,14 +49,7 @@ function chartOne(numberOfChart){
     
 }
 
-/*
-* 
-*
-*
-*
-*
-*/
-
+/*We placed our two table charts under these functions for more readability*/
 
 function chartTwo(labels, valuesOne, valuesTwo, numberOfChart){
     

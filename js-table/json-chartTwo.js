@@ -1,6 +1,9 @@
 let tableTwoId = document.getElementById("table2");
-let jsonTwo = []; // First row needs to be headers 
+let jsonTwo = []; 
 let headersTwo =[];
+
+/*These lines will get data from the table in eahc row, then in each cell
+It will be made in a specific order due to a lack of precision in the HTML table*/
 
 for (let i = 0; i < tableTwoId.rows[0].cells.length; i++) {
   headersTwo[i] = tableTwoId.rows[0].cells[i].innerHTML.toLowerCase();
