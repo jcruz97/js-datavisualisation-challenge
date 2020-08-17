@@ -1,4 +1,4 @@
-avascript Challenge : "Data Visualisation"
+Javascript Challenge : "Data Visualisation"
 =====================
 Real data fetching & use for charts on a website.
 
