@@ -17,23 +17,31 @@ createChart();
 function createChart(){
     let ctx = document.getElementById('canvas').getContext('2d');
     let labelValue= [];
-    for (let i = 2002; i < 2013; i++) {
-        labelValue.push(i);  
-    }
+    // for (let i = 2002; i < 2013; i++) {
+    //     labelValue.push(i);  
+    // }
     let datasetsValue = [];
-        for (let i = 0; i < table1.rows.length; i++) {
+        for (let i = 1; i < table1.rows.length; i++) {
         let country = {
             label:table1.rows[i].cells[1].textContent,
-            backgroundColor: 'yellow',
+            // backgroundColor: 'yellow',
             borderColor:'blue',
             borderWidth: 2,
+            hidden: i>4,
             data:[]
         }
         for (let j = 1; j < table1.rows[i].cells.length; j++) {
-            country.data.push(table1.rows[i].cells[j].textContent);   
+            if (i==1){
+                labelValue.push(table1.rows[i].cells[j].textContent);
+            }else {
+                if(j>1){
+            country.data.push(table1.rows[i].cells[j].textContent.replace(",","."));   
+            }
         }
-
-        datasetsValue.push(country)
+        }
+        if (i>1){
+        datasetsValue.push(country);
+        }
     }
 
     let data = {
@@ -43,7 +51,7 @@ function createChart(){
         datasets :datasetsValue
        
     };
-    let options;
+    let options ={};
     
     // chart configuration
     let config = {
@@ -53,4 +61,5 @@ function createChart(){
     }
     // instanciating graph1
     let graph1 = new Chart (ctx, config);
+    console.log(datasetsValue);
 }
