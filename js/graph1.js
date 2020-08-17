@@ -12,20 +12,18 @@ table1.before(canvas);
 
 //Chart creation in de canvas
 createChart();
-
+function randomColor(){
+    return Math.floor(Math.random()*256)
+}
 
 function createChart(){
     let ctx = document.getElementById('canvas').getContext('2d');
     let labelValue= [];
-    // for (let i = 2002; i < 2013; i++) {
-    //     labelValue.push(i);  
-    // }
     let datasetsValue = [];
         for (let i = 1; i < table1.rows.length; i++) {
         let country = {
             label:table1.rows[i].cells[1].textContent,
-            // backgroundColor: 'yellow',
-            borderColor:'blue',
+            borderColor: `rgb(${randomColor()},${randomColor()},${randomColor()})`,
             borderWidth: 2,
             hidden: i>4,
             data:[]
